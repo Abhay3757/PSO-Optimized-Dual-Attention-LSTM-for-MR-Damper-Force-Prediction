@@ -57,7 +57,7 @@ class MOPSOConfig:
     crossover_prob: float = 0.9
     mutation_prob: float = 0.1
     tournament_size: int = 2
-    weights: Tuple[float, float, float] = (0.6, 0.05, 0.35)  # RMSE, latency, overfitting
+    weights: Tuple[float, float, float] = (0.90, 0.05, 0.05)  # RMSE, latency, overfitting
     early_stopping_patience: int = 5
     train_epochs: int = 50
     min_epochs: int = 10

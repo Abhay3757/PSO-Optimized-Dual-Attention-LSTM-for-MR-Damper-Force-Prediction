@@ -736,3 +736,93 @@
 2025-09-22 06:05:04,178 - INFO - Best R²: 0.9032
 2025-09-22 06:05:04,178 - INFO - Results saved to: results
 2025-09-22 06:05:04,178 - INFO - ============================================================
+2025-09-22 06:24:20,864 - INFO - Pipeline initialized with device: cuda
+2025-09-22 06:24:20,864 - INFO - Results will be saved to: results
+2025-09-22 06:24:20,864 - INFO - Starting MR Damper Force Prediction Pipeline
+2025-09-22 06:24:20,864 - INFO - Configuration: {
+  "data": {
+    "csv_path": "Dataset/ranran_50_converted.csv",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15
+  },
+  "preprocessing": {
+    "normalize_method": "standard",
+    "lookback_window": 20
+  },
+  "optimization": {
+    "enable_mopso": true,
+    "bounds": {
+      "num_layers_min": 1,
+      "num_layers_max": 3,
+      "hidden_dim_min": 64,
+      "hidden_dim_max": 256,
+      "learning_rate_min": 0.0001,
+      "learning_rate_max": 0.01,
+      "dropout_min": 0.0,
+      "dropout_max": 0.4,
+      "lookback_min": 15,
+      "lookback_max": 30
+    },
+    "mopso_config": {
+      "population_size": 8,
+      "max_generations": 5,
+      "train_epochs": 30,
+      "weights": [
+        0.9,
+        0.05,
+        0.05
+      ]
+    }
+  },
+  "model": {
+    "default_hyperparams": {
+      "num_layers": 2,
+      "hidden_dim": 128,
+      "learning_rate": 0.001,
+      "dropout": 0.2,
+      "lookback_window": 20
+    }
+  },
+  "training": {
+    "batch_size": 64,
+    "training_config": {
+      "epochs": 100,
+      "early_stopping_patience": 15,
+      "min_epochs": 20,
+      "log_interval": 10,
+      "save_best_model": true,
+      "save_checkpoints": true
+    }
+  },
+  "results_dir": "results"
+}
+2025-09-22 06:24:20,864 - INFO - ============================================================
+2025-09-22 06:24:20,865 - INFO - Step 1: Data Preprocessing
+2025-09-22 06:24:20,865 - INFO - ============================================================
+2025-09-22 06:25:01,337 - INFO - Data preprocessing completed successfully
+2025-09-22 06:25:01,337 - INFO - ============================================================
+2025-09-22 06:25:01,337 - INFO - Step 2: MOPSO Hyperparameter Optimization
+2025-09-22 06:25:01,337 - INFO - ============================================================
+2025-09-22 07:52:07,228 - INFO - MOPSO optimization completed successfully
+2025-09-22 07:52:07,229 - INFO - ============================================================
+2025-09-22 07:52:07,229 - INFO - Step 3: Model Training
+2025-09-22 07:52:07,229 - INFO - ============================================================
+2025-09-22 07:52:07,236 - INFO - Re-creating data with lookback window: 26
+2025-09-22 07:59:38,583 - INFO - Model training completed successfully
+2025-09-22 07:59:38,585 - INFO - ============================================================
+2025-09-22 07:59:38,585 - INFO - Step 4: Model Evaluation
+2025-09-22 07:59:38,585 - INFO - ============================================================
+2025-09-22 07:59:39,258 - INFO - Model evaluation completed successfully
+2025-09-22 07:59:39,259 - INFO - ============================================================
+2025-09-22 07:59:39,259 - INFO - Step 5: Visualization Generation
+2025-09-22 07:59:39,259 - INFO - ============================================================
+2025-09-22 09:40:47,613 - INFO - Visualization generation completed successfully
+2025-09-22 09:40:47,688 - INFO - Final results saved to: results\pipeline_results.json
+2025-09-22 09:40:47,689 - INFO - ============================================================
+2025-09-22 09:40:47,689 - INFO - Pipeline completed successfully!
+2025-09-22 09:40:47,689 - INFO - Total pipeline time: 11786.75 seconds
+2025-09-22 09:40:47,689 - INFO - Best RMSE: 54.1445
+2025-09-22 09:40:47,689 - INFO - Best R²: 0.9396
+2025-09-22 09:40:47,689 - INFO - Results saved to: results
+2025-09-22 09:40:47,689 - INFO - ============================================================
