@@ -1,0 +1,58 @@
+{
+  "data": {
+    "csv_path": "Dataset/ranran_50_converted.csv",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15
+  },
+  "preprocessing": {
+    "normalize_method": "standard",
+    "lookback_window": 20
+  },
+  "optimization": {
+    "enable_mopso": true,
+    "bounds": {
+      "num_layers_min": 1,
+      "num_layers_max": 3,
+      "hidden_dim_min": 64,
+      "hidden_dim_max": 256,
+      "learning_rate_min": 0.0001,
+      "learning_rate_max": 0.01,
+      "dropout_min": 0.0,
+      "dropout_max": 0.4,
+      "lookback_min": 15,
+      "lookback_max": 30
+    },
+    "mopso_config": {
+      "population_size": 8,
+      "max_generations": 5,
+      "train_epochs": 30,
+      "weights": [
+        0.6,
+        0.05,
+        0.35
+      ]
+    }
+  },
+  "model": {
+    "default_hyperparams": {
+      "num_layers": 2,
+      "hidden_dim": 128,
+      "learning_rate": 0.001,
+      "dropout": 0.2,
+      "lookback_window": 20
+    }
+  },
+  "training": {
+    "batch_size": 64,
+    "training_config": {
+      "epochs": 100,
+      "early_stopping_patience": 15,
+      "min_epochs": 20,
+      "log_interval": 10,
+      "save_best_model": true,
+      "save_checkpoints": true
+    }
+  },
+  "results_dir": "results"
+}
