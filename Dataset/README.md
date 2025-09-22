@@ -208,5 +208,4 @@ The data has been made publicly available through DesignSafe-CI, enabling reprod
 
 ---
 
-*Dataset README generated for MR Damper Force Prediction project*  
 *Last updated: September 22, 2025*
