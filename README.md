@@ -319,9 +319,9 @@ If you use this work in your research, please cite:
 ```bibtex
 @software{mr_damper_dual_attention_lstm,
   title={PSO-Optimized Dual-Attention LSTM for MR Damper Force Prediction},
-  author={[Your Name]},
+  author={[Abhay Singh]},
   year={2025},
-  url={https://github.com/your-repo/mr-damper-prediction}
+  url={https://github.com/Abhay3757/PSO-Optimized-Dual-Attention-LSTM-for-MR-Damper-Force-Prediction}
 }
 ```
 
@@ -348,5 +348,3 @@ For questions, issues, or suggestions:
 - PyTorch and scikit-learn communities
 - NSGA-II and MOPSO algorithm developers
 - Open source visualization libraries (Matplotlib, Plotly, Seaborn)
-
-**Built with ❤️ for advancing smart damping systems research**
