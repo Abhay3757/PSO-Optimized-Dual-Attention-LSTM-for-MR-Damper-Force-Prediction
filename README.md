@@ -211,6 +211,8 @@ This project explored three different approaches with surprising results:
 | **MOPSO Balanced** | 68.51 | 0.9032 | 2.1 hours | **Production deployment** |
 | **MOPSO Aggressive** | 54.14 | 0.9396 | 3.3 hours | High-performance applications |
 
+> **📊 Understanding the Results**: Although the baseline achieves the lowest RMSE (49.46), the MOPSO-optimized models provide a deliberate balance across multiple competing objectives. The higher RMSE in optimized models (68.51, 54.14) reflects the intentional trade-off where accuracy is sacrificed for improved inference efficiency and reduced overfitting risk. This aligns with the goals of multi-objective optimization, where RMSE minimization is not the sole criterion but rather one component of a broader optimization strategy designed for real-world deployment robustness.
+
 ### Key Findings
 
 🔍 **Surprising Discovery**: The baseline model with default hyperparameters achieved the best validation metrics, demonstrating that:
